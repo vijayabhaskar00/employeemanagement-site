@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="./logo.jpg?v=official" />
+    <link rel="apple-touch-icon" href="./logo.jpg?v=official" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
+    <!-- ── Resource Hints — faster cold connections ──────────────────────── -->
+    <link rel="preconnect" href="https://firestore.googleapis.com" />
+    <link rel="preconnect" href="https://identitytoolkit.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://stpayrollinvoices.firebaseapp.com" />
+
+    <!-- ── Enterprise Security Headers ───────────────────────────────────── -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval'
+          https://*.googleapis.com https://*.gstatic.com
+          https://*.firebaseio.com https://*.firebaseapp.com https://*.firebase.com
+          blob: data:;
+        connect-src 'self' https://*.googleapis.com https://*.firebaseio.com
+          https://*.firebase.com https://firestore.googleapis.com wss://*.firebaseio.com
+          https://*.cloudfunctions.net https://*.run.app https://*.a.run.app
+          https://api.brevo.com https://payout-api.cashfree.com https://payout-gamma.cashfree.com;
+        script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';
+        img-src 'self' data: blob: https:;
+        font-src 'self' https://fonts.gstatic.com;
+        frame-ancestors 'none';
+      " />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), browsing-topics=(), clipboard-read=(), display-capture=()" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+
+    <!-- ── SEO ────────────────────────────────────────────────────────────── -->
+    <meta name="description" content="Colosseum CQ Solutions Secure Vault — Enterprise Employee Management, Encrypted Payroll Vaults, and Digital Asset Clearance platform." />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <title>Colosseum Secure Vault • Enterprise ERP Platform</title>
+
+    <!-- ── Hackproof Runtime Protection (runs before React mounts) ────────── -->
+    <script>
+      (function () {
+        'use strict';
+
+        /* ── 1. Block headless / automated browser engines ── */
+        if (window.navigator && window.navigator.webdriver) {
+          document.addEventListener('DOMContentLoaded', function () {
+            document.body.innerHTML =
+              '<div style="padding:3rem;text-align:center;color:#f87171;font-family:monospace;' +
+              'background:#0c0c14;height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;">' +
+              '<div style="font-size:3rem;">🔒</div>' +
+              '<h2 style="margin:1rem 0 0.5rem;color:#f8fafc;">Access Denied</h2>' +
+              '<p style="color:#64748b;">Automated access is not permitted on this platform.</p></div>';
+          });
+          return;
+        }
+
+        /* ── 2. Console override — wipe all console output ── */
+        (function () {
+          var noop = function () {};
+          var methods = [
+            'log','debug','info','warn','error','table','dir',
+            'group','groupEnd','groupCollapsed','time','timeEnd',
+            'trace','assert','count','countReset','profile','profileEnd'
+          ];
+          if (window.console) {
+            methods.forEach(function (m) {
+              try { window.console[m] = noop; } catch (_) {}
+            });
+          }
+          // Override console entirely so it can't be restored easily
+          try {
+            Object.defineProperty(window, 'console', {
+              get: function () {
+                return {
+                  log: noop, warn: noop, error: noop, info: noop,
+                  debug: noop, table: noop, dir: noop, group: noop,
+                  groupEnd: noop, groupCollapsed: noop,
+                };
+              },
+              set: function () {},
+              configurable: false,
+            });
+          } catch (_) {}
+        })();
+
+        /* ── 3. Disable right-click context menu ── */
+        document.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+
+        /* ── 4. Block DevTools keyboard shortcuts ── */
+        document.addEventListener('keydown', function (e) {
+          var key = (e.key || '').toUpperCase();
+          // F12
+          if (e.key === 'F12') { e.preventDefault(); e.stopPropagation(); return false; }
+          // Ctrl/Cmd + Shift + I, J, C, K, E (inspect, console, etc.)
+          if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['I','J','C','K','E'].includes(key)) {
+            e.preventDefault(); e.stopPropagation(); return false;
+          }
+          // Ctrl + U (view source), Ctrl + S (save page)
+          if ((e.ctrlKey || e.metaKey) && ['U','S'].includes(key)) {
+            e.preventDefault(); e.stopPropagation(); return false;
+          }
+          // Cmd + Option + I (Mac DevTools)
+          if (e.metaKey && e.altKey && key === 'I') {
+            e.preventDefault(); e.stopPropagation(); return false;
+          }
+          // Ctrl + P (print)
+          if ((e.ctrlKey || e.metaKey) && key === 'P') {
+            e.preventDefault(); e.stopPropagation(); return false;
+          }
+        }, true);
+
+        /* ── 5. Block printing ── */
+        window.addEventListener('beforeprint', function (e) {
+          e.preventDefault();
+          document.body.style.visibility = 'hidden';
+        });
+        window.addEventListener('afterprint', function () {
+          document.body.style.visibility = '';
+        });
+
+        /* ── 6. DevTools size-heuristic detection ── */
+        // When DevTools is open, the window inner dimensions shrink vs outer
+        var _devToolsChecked = false;
+        var _THRESHOLD = 170;
+
+        function _checkDevTools() {
+          var wDiff = window.outerWidth  - window.innerWidth;
+          var hDiff = window.outerHeight - window.innerHeight;
+          var open  = wDiff > _THRESHOLD || hDiff > _THRESHOLD;
+          if (open && !_devToolsChecked) {
+            _devToolsChecked = true;
+            // Blur the sensitive content
+            var root = document.getElementById('root');
+            if (root) {
+              root.style.filter      = 'blur(12px)';
+              root.style.userSelect  = 'none';
+              root.style.pointerEvents = 'none';
+            }
+            // Show security overlay
+            var overlay = document.createElement('div');
+            overlay.id = '__sec_overlay';
+            overlay.style.cssText =
+              'position:fixed;inset:0;z-index:999999;background:rgba(10,10,20,0.96);' +
+              'display:flex;flex-direction:column;align-items:center;justify-content:center;' +
+              'color:#f8fafc;font-family:system-ui,sans-serif;text-align:center;';
+            overlay.innerHTML =
+              '<div style="font-size:3.5rem;margin-bottom:1rem;">🔐</div>' +
+              '<h2 style="font-size:1.5rem;font-weight:800;margin:0 0 0.5rem;">Secured Environment</h2>' +
+              '<p style="color:#94a3b8;font-size:0.9rem;max-width:400px;">' +
+              'Developer tools detected. Close DevTools to continue accessing this platform.</p>';
+            document.body.appendChild(overlay);
+          } else if (!open && _devToolsChecked) {
+            _devToolsChecked = false;
+            var root = document.getElementById('root');
+            if (root) {
+              root.style.filter        = '';
+              root.style.userSelect    = '';
+              root.style.pointerEvents = '';
+            }
+            var existing = document.getElementById('__sec_overlay');
+            if (existing) existing.remove();
+          }
+        }
+
+        // Phones and tablets have no docked DevTools, and their on-screen keyboard,
+        // in-app browser bars and pinch-zoom shrink the inner window by far more than
+        // the threshold, which locked people out (e.g. typing a PIN on a CA link).
+        // Only run the heuristic where a mouse or trackpad is present.
+        if (window.matchMedia && window.matchMedia('(any-pointer: fine)').matches) {
+          setInterval(_checkDevTools, 800);
+        }
+
+        /* ── 7. Session inactivity timeout (4 hours → clears session storage) ── */
+        var _IDLE_MS = 4 * 60 * 60 * 1000; // 4 hours
+        var _idleTimer = null;
+
+        function _resetIdle() {
+          clearTimeout(_idleTimer);
+          _idleTimer = setTimeout(function () {
+            // Clear sensitive session artifacts (React state is already ephemeral)
+            try {
+              sessionStorage.clear();
+              // Signal the app to logout via a custom storage event
+              localStorage.setItem('__cq_force_logout', Date.now().toString());
+              localStorage.removeItem('__cq_force_logout');
+            } catch (_) {}
+            // Hard redirect to login
+            window.location.reload();
+          }, _IDLE_MS);
+        }
+
+        ['mousemove','mousedown','keydown','scroll','touchstart','click'].forEach(function (evt) {
+          document.addEventListener(evt, _resetIdle, { passive: true });
+        });
+        _resetIdle(); // start the timer immediately
+
+        /* ── 8. Disable drag-and-drop (prevents asset exfiltration) ── */
+        document.addEventListener('dragstart', function (e) { e.preventDefault(); });
+        document.addEventListener('drop',      function (e) { e.preventDefault(); });
+
+        /* ── 9. Apply saved theme preference (must run early to avoid FOUC) ── */
+        var savedTheme = localStorage.getItem('theme-privilege');
+        if (savedTheme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+
+      })();
+    </script>
+
+    <!-- ── PDF Engine is bundled via jspdf — no CDN script needed ─────────── -->
+
+    <!-- ── Global Security CSS ───────────────────────────────────────────── -->
+    <style>body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}input,textarea,select,[contenteditable],.selectable,code,pre{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}table td,table th{-webkit-user-select:none;user-select:none}</style>
+    <script type="module" crossorigin src="./assets/index-C73mLxo8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dwp2_xGX.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

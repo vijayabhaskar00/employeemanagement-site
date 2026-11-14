@@ -1,0 +1,1 @@
+function e(e,t){return(e||[]).reduce((e,n)=>{let r=n.amount||0;return e+(t?Math.max(0,r-(n.tdsDeducted||0)):r)},0)}function t(t){let n=t.tdsApplied?t.netPayable||0:t.approvedAmount||t.amount||0,r=e(t.payments,t.tdsApplied);return{target:n,paid:r,due:Math.max(0,n-r),state:r>=n?`Paid`:r>0?`Partial`:`Unpaid`,pct:n>0?Math.min(100,Math.round(r/n*100)):100}}export{e as n,t};

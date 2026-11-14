@@ -1,0 +1,1429 @@
+{
+  "_AgreementContext-54gK7PAg.js": {
+    "file": "assets/AgreementContext-54gK7PAg.js",
+    "name": "AgreementContext",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_vendor-firebase-core-LaqpiFFz.js",
+      "_firebase-CCH_qpyh.js",
+      "_AuthContext-9LkeGITp.js",
+      "_emailSender-BQSW4O6w.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_AuthContext-9LkeGITp.js": {
+    "file": "assets/AuthContext-9LkeGITp.js",
+    "name": "AuthContext",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_firebase-CCH_qpyh.js",
+      "_vendor-firebase-auth-eJTzyhS_.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_preload-helper-BQUUbbNx.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ],
+    "dynamicImports": [
+      "node_modules/firebase/messaging/dist/esm/index.esm.js"
+    ]
+  },
+  "_BrandLogo-CTm8PmSd.js": {
+    "file": "assets/BrandLogo-CTm8PmSd.js",
+    "name": "BrandLogo",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_BrandsPage-DTHpjdbk.js": {
+    "file": "assets/BrandsPage-DTHpjdbk.js",
+    "name": "BrandsPage",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_useCrm-DhnIR8DO.js",
+      "_AuthContext-9LkeGITp.js",
+      "_crmReports-CJ0qHdCH.js",
+      "_NotificationBell-BtZbakVe.js",
+      "_crm-DPygeg8O.js",
+      "_csv-BZCduWS5.js"
+    ]
+  },
+  "_CashfreePayCell-Bw4U0T1H.js": {
+    "file": "assets/CashfreePayCell-Bw4U0T1H.js",
+    "name": "CashfreePayCell",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_firebase-CCH_qpyh.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_cashfreePayout-BamdxUjx.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_CashfreePayDialog-BxK3IpMJ.js": {
+    "file": "assets/CashfreePayDialog-BxK3IpMJ.js",
+    "name": "CashfreePayDialog",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_firebase-CCH_qpyh.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_cashfreePayout-BamdxUjx.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_EmailPreviewModal-C4wzCGbR.js": {
+    "file": "assets/EmailPreviewModal-C4wzCGbR.js",
+    "name": "EmailPreviewModal",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_emailSender-BQSW4O6w.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_EmployeeContext-q64Qq2Mf.js": {
+    "file": "assets/EmployeeContext-q64Qq2Mf.js",
+    "name": "EmployeeContext",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_firebase-CCH_qpyh.js",
+      "_schemaMigration-B84oYala.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_AuthContext-9LkeGITp.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "src/utils/employeeRosterImport.js"
+    ]
+  },
+  "_ExpenseContext-Dy5hjyyg.js": {
+    "file": "assets/ExpenseContext-Dy5hjyyg.js",
+    "name": "ExpenseContext",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_AuthContext-9LkeGITp.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_InternContext-CFFehTzn.js": {
+    "file": "assets/InternContext-CFFehTzn.js",
+    "name": "InternContext",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_firebase-CCH_qpyh.js",
+      "_schemaMigration-B84oYala.js",
+      "_AuthContext-9LkeGITp.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_vendor-firebase-firestore-beRYNGZx.js"
+    ]
+  },
+  "_InvoiceContext-uxYH4XxJ.js": {
+    "file": "assets/InvoiceContext-uxYH4XxJ.js",
+    "name": "InvoiceContext",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_firebase-CCH_qpyh.js",
+      "_vendor-firebase-core-LaqpiFFz.js",
+      "_invoiceEngine-haVLI9UD.js",
+      "_preload-helper-BQUUbbNx.js",
+      "_schemaMigration-B84oYala.js",
+      "_AuthContext-9LkeGITp.js",
+      "_publicToken-Ziuzse4S.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ],
+    "dynamicImports": [
+      "node_modules/firebase/firestore/dist/esm/index.esm.js"
+    ]
+  },
+  "_NotificationBell-BtZbakVe.js": {
+    "file": "assets/NotificationBell-BtZbakVe.js",
+    "name": "NotificationBell",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_AuthContext-9LkeGITp.js",
+      "_useCrm-DhnIR8DO.js",
+      "_ToastContext-DC1fIFG6.js"
+    ]
+  },
+  "_OnboardingContext-f0eKpcKM.js": {
+    "file": "assets/OnboardingContext-f0eKpcKM.js",
+    "name": "OnboardingContext",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_AuthContext-9LkeGITp.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_SignaturePad-BaCqUBEH.js": {
+    "file": "assets/SignaturePad-BaCqUBEH.js",
+    "name": "SignaturePad",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_TdsContext-OcLqvcEH.js": {
+    "file": "assets/TdsContext-OcLqvcEH.js",
+    "name": "TdsContext",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_AuthContext-9LkeGITp.js",
+      "_tdsCore-BA5ZmP9y.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_TdsTransactionModal-C6e9i6GC.js": {
+    "file": "assets/TdsTransactionModal-C6e9i6GC.js",
+    "name": "TdsTransactionModal",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_vendor-firebase-core-LaqpiFFz.js",
+      "_firebase-CCH_qpyh.js",
+      "_preload-helper-BQUUbbNx.js",
+      "_tdsCore-BA5ZmP9y.js"
+    ],
+    "dynamicImports": [
+      "src/utils/tdsUtils.js"
+    ]
+  },
+  "_ThemeContext-P9qPrUNS.js": {
+    "file": "assets/ThemeContext-P9qPrUNS.js",
+    "name": "ThemeContext",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_ToastContext-DC1fIFG6.js": {
+    "file": "assets/ToastContext-DC1fIFG6.js",
+    "name": "ToastContext",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_TopBar-xdgFNlv7.js": {
+    "file": "assets/TopBar-xdgFNlv7.js",
+    "name": "TopBar",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_AuthContext-9LkeGITp.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_ThemeContext-P9qPrUNS.js",
+      "_InternContext-CFFehTzn.js",
+      "_InvoiceContext-uxYH4XxJ.js"
+    ]
+  },
+  "_cashfreePayout-BamdxUjx.js": {
+    "file": "assets/cashfreePayout-BamdxUjx.js",
+    "name": "cashfreePayout"
+  },
+  "_crm-DPygeg8O.js": {
+    "file": "assets/crm-DPygeg8O.js",
+    "name": "crm"
+  },
+  "_crmReports-CJ0qHdCH.js": {
+    "file": "assets/crmReports-CJ0qHdCH.js",
+    "name": "crmReports",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_crm-DPygeg8O.js",
+      "_useCrm-DhnIR8DO.js"
+    ]
+  },
+  "_csv-BZCduWS5.js": {
+    "file": "assets/csv-BZCduWS5.js",
+    "name": "csv",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-csv-DSJEK5H6.js"
+    ]
+  },
+  "_csvHandler-Dy8nylWA.js": {
+    "file": "assets/csvHandler-Dy8nylWA.js",
+    "name": "csvHandler",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-csv-DSJEK5H6.js"
+    ]
+  },
+  "_emailSender-BQSW4O6w.js": {
+    "file": "assets/emailSender-BQSW4O6w.js",
+    "name": "emailSender",
+    "imports": [
+      "_firebase-CCH_qpyh.js",
+      "_vendor-firebase-firestore-beRYNGZx.js"
+    ]
+  },
+  "_employeeRosterImport-NyPrlbQf.js": {
+    "file": "assets/employeeRosterImport-NyPrlbQf.js",
+    "name": "employeeRosterImport",
+    "imports": [
+      "_vendor-xlsx-166tXQcn.js",
+      "_payrollEngine-TSvFUt8q.js"
+    ]
+  },
+  "_excelHandler-ihE64E1O.js": {
+    "file": "assets/excelHandler-ihE64E1O.js",
+    "name": "excelHandler",
+    "imports": [
+      "_vendor-xlsx-166tXQcn.js",
+      "_invoiceEngine-haVLI9UD.js"
+    ]
+  },
+  "_expensePayout-BSEN4wp2.js": {
+    "file": "assets/expensePayout-BSEN4wp2.js",
+    "name": "expensePayout"
+  },
+  "_firebase-CCH_qpyh.js": {
+    "file": "assets/firebase-CCH_qpyh.js",
+    "name": "firebase",
+    "imports": [
+      "_vendor-firebase-core-LaqpiFFz.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_vendor-firebase-auth-eJTzyhS_.js"
+    ]
+  },
+  "_gstinDecoder-Cyusk6si.js": {
+    "file": "assets/gstinDecoder-Cyusk6si.js",
+    "name": "gstinDecoder"
+  },
+  "_html2canvas-DAdnZG0D.js": {
+    "file": "assets/html2canvas-DAdnZG0D.js",
+    "name": "html2canvas",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js"
+    ]
+  },
+  "_invoiceCompany-C5wTB5No.js": {
+    "file": "assets/invoiceCompany-C5wTB5No.js",
+    "name": "invoiceCompany"
+  },
+  "_invoiceEngine-haVLI9UD.js": {
+    "file": "assets/invoiceEngine-haVLI9UD.js",
+    "name": "invoiceEngine"
+  },
+  "_logoBase64-KdYVw8QG.js": {
+    "file": "assets/logoBase64-KdYVw8QG.js",
+    "name": "logoBase64"
+  },
+  "_offerLetterPdf-BrXxt1Uc.js": {
+    "file": "assets/offerLetterPdf-BrXxt1Uc.js",
+    "name": "offerLetterPdf",
+    "imports": [
+      "_vendor-pdf-EFu4z4dB.js",
+      "_logoBase64-KdYVw8QG.js"
+    ]
+  },
+  "_payrollEngine-TSvFUt8q.js": {
+    "file": "assets/payrollEngine-TSvFUt8q.js",
+    "name": "payrollEngine"
+  },
+  "_pdfGenerator-Bb8wTNYa.js": {
+    "file": "assets/pdfGenerator-Bb8wTNYa.js",
+    "name": "pdfGenerator",
+    "imports": [
+      "_vendor-pdf-EFu4z4dB.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_logoBase64-KdYVw8QG.js"
+    ]
+  },
+  "_preload-helper-BQUUbbNx.js": {
+    "file": "assets/preload-helper-BQUUbbNx.js",
+    "name": "preload-helper"
+  },
+  "_publicToken-Ziuzse4S.js": {
+    "file": "assets/publicToken-Ziuzse4S.js",
+    "name": "publicToken"
+  },
+  "_rolldown-runtime-COiEfhsA.js": {
+    "file": "assets/rolldown-runtime-COiEfhsA.js",
+    "name": "rolldown-runtime"
+  },
+  "_schemaMigration-B84oYala.js": {
+    "file": "assets/schemaMigration-B84oYala.js",
+    "name": "schemaMigration"
+  },
+  "_tdsCore-BA5ZmP9y.js": {
+    "file": "assets/tdsCore-BA5ZmP9y.js",
+    "name": "tdsCore"
+  },
+  "_tdsUtils-COyrv4IY.js": {
+    "file": "assets/tdsUtils-COyrv4IY.js",
+    "name": "tdsUtils",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-pdf-EFu4z4dB.js",
+      "_vendor-csv-DSJEK5H6.js",
+      "_tdsCore-BA5ZmP9y.js"
+    ]
+  },
+  "_useCrm-DhnIR8DO.js": {
+    "file": "assets/useCrm-DhnIR8DO.js",
+    "name": "useCrm",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_AuthContext-9LkeGITp.js",
+      "_crm-DPygeg8O.js"
+    ]
+  },
+  "_useOfficeExpenses-oJs76qgZ.js": {
+    "file": "assets/useOfficeExpenses-oJs76qgZ.js",
+    "name": "useOfficeExpenses",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_AuthContext-9LkeGITp.js"
+    ]
+  },
+  "_vendor-csv-DSJEK5H6.js": {
+    "file": "assets/vendor-csv-DSJEK5H6.js",
+    "name": "vendor-csv",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js"
+    ]
+  },
+  "_vendor-exceljs-M4UAhqUV.js": {
+    "file": "assets/vendor-exceljs-M4UAhqUV.js",
+    "name": "vendor-exceljs",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js"
+    ]
+  },
+  "_vendor-firebase-auth-eJTzyhS_.js": {
+    "file": "assets/vendor-firebase-auth-eJTzyhS_.js",
+    "name": "vendor-firebase-auth"
+  },
+  "_vendor-firebase-core-LaqpiFFz.js": {
+    "file": "assets/vendor-firebase-core-LaqpiFFz.js",
+    "name": "vendor-firebase-core",
+    "imports": [
+      "_vendor-firebase-auth-eJTzyhS_.js"
+    ]
+  },
+  "_vendor-firebase-firestore-beRYNGZx.js": {
+    "file": "assets/vendor-firebase-firestore-beRYNGZx.js",
+    "name": "vendor-firebase-firestore",
+    "imports": [
+      "_vendor-firebase-auth-eJTzyhS_.js",
+      "_vendor-firebase-core-LaqpiFFz.js"
+    ]
+  },
+  "_vendor-firebase-messaging--Yxy3FMZ.js": {
+    "file": "assets/vendor-firebase-messaging--Yxy3FMZ.js",
+    "name": "vendor-firebase-messaging",
+    "imports": [
+      "_vendor-firebase-auth-eJTzyhS_.js"
+    ]
+  },
+  "_vendor-icons-hnNHp7Ix.js": {
+    "file": "assets/vendor-icons-hnNHp7Ix.js",
+    "name": "vendor-icons",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js"
+    ]
+  },
+  "_vendor-pdf-EFu4z4dB.js": {
+    "file": "assets/vendor-pdf-EFu4z4dB.js",
+    "name": "vendor-pdf",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "node_modules/html2canvas/dist/html2canvas.js",
+      "node_modules/dompurify/dist/purify.es.mjs",
+      "node_modules/canvg/lib/index.es.js"
+    ]
+  },
+  "_vendor-react-C1Dy7Cd7.js": {
+    "file": "assets/vendor-react-C1Dy7Cd7.js",
+    "name": "vendor-react",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js"
+    ]
+  },
+  "_vendor-recharts-C_11hlaH.js": {
+    "file": "assets/vendor-recharts-C_11hlaH.js",
+    "name": "vendor-recharts",
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "_vendor-xlsx-166tXQcn.js": {
+    "file": "assets/vendor-xlsx-166tXQcn.js",
+    "name": "vendor-xlsx"
+  },
+  "index.html": {
+    "file": "assets/index-C73mLxo8.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_AuthContext-9LkeGITp.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_InternContext-CFFehTzn.js",
+      "_InvoiceContext-uxYH4XxJ.js",
+      "_BrandLogo-CTm8PmSd.js",
+      "_OnboardingContext-f0eKpcKM.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_ThemeContext-P9qPrUNS.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_ExpenseContext-Dy5hjyyg.js",
+      "_TdsContext-OcLqvcEH.js",
+      "_AgreementContext-54gK7PAg.js",
+      "_crm-DPygeg8O.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "src/pages/LoginPage.jsx",
+      "src/pages/ForgotPasswordPage.jsx",
+      "src/pages/DashboardPage.jsx",
+      "src/pages/EmployeeDirectoryPage.jsx",
+      "src/pages/EmployeeProfilePage.jsx",
+      "src/pages/AddEmployeePage.jsx",
+      "src/pages/PayrollPage.jsx",
+      "src/pages/BulkImportPage.jsx",
+      "src/pages/ExitManagementPage.jsx",
+      "src/pages/InvoicesPage.jsx",
+      "src/pages/CreateInvoicePage.jsx",
+      "src/pages/ClientInvoiceView.jsx",
+      "src/pages/CaSharePage.jsx",
+      "src/pages/ClientsPage.jsx",
+      "src/pages/InternsPage.jsx",
+      "src/pages/AccessControlPage.jsx",
+      "src/pages/ExpenseFormPage.jsx",
+      "src/pages/ExpenseAdminPage.jsx",
+      "src/pages/ProfilePage.jsx",
+      "src/pages/ExpenseTrackingPage.jsx",
+      "src/pages/TdsPage.jsx",
+      "src/pages/PanSubmissionPage.jsx",
+      "src/pages/PanStatusPage.jsx",
+      "src/pages/EmployeeOnboardingPage.jsx",
+      "src/pages/OnboardingRequestsPage.jsx",
+      "src/pages/EmailVaultPage.jsx",
+      "src/pages/CashfreeSyncPage.jsx",
+      "src/pages/AgreementsPage.jsx",
+      "src/pages/OfficeExpensesPage.jsx",
+      "src/pages/PaymentsPage.jsx",
+      "src/pages/PublicSignPage.jsx",
+      "src/crm/CrmApp.jsx",
+      "src/crm/BrandsPage.jsx",
+      "src/crm/BrandDetailPage.jsx",
+      "src/crm/ImportBrandsPage.jsx",
+      "src/crm/TeamPage.jsx",
+      "src/crm/TemplatesPage.jsx",
+      "src/crm/DashboardPage.jsx"
+    ],
+    "css": [
+      "assets/index-Dwp2_xGX.css"
+    ]
+  },
+  "node_modules/canvg/lib/index.es.js": {
+    "file": "assets/index.es-CK-OWDwL.js",
+    "name": "index.es",
+    "src": "node_modules/canvg/lib/index.es.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-pdf-EFu4z4dB.js"
+    ]
+  },
+  "node_modules/dompurify/dist/purify.es.mjs": {
+    "file": "assets/purify.es-Dqk5qvad.js",
+    "name": "purify.es",
+    "src": "node_modules/dompurify/dist/purify.es.mjs",
+    "isDynamicEntry": true
+  },
+  "node_modules/exceljs/dist/exceljs.min.js": {
+    "file": "assets/exceljs.min-Bm4gxEKv.js",
+    "name": "exceljs.min",
+    "src": "node_modules/exceljs/dist/exceljs.min.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-exceljs-M4UAhqUV.js"
+    ]
+  },
+  "node_modules/fflate/esm/browser.js": {
+    "file": "assets/browser-Y3HvJu5K.js",
+    "name": "browser",
+    "src": "node_modules/fflate/esm/browser.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-pdf-EFu4z4dB.js"
+    ]
+  },
+  "node_modules/firebase/firestore/dist/esm/index.esm.js": {
+    "file": "assets/index.esm-vCYsRPKd.js",
+    "name": "index.esm",
+    "src": "node_modules/firebase/firestore/dist/esm/index.esm.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-firebase-firestore-beRYNGZx.js"
+    ]
+  },
+  "node_modules/firebase/messaging/dist/esm/index.esm.js": {
+    "file": "assets/index.esm-CzRa9apv.js",
+    "name": "index.esm",
+    "src": "node_modules/firebase/messaging/dist/esm/index.esm.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-firebase-messaging--Yxy3FMZ.js"
+    ]
+  },
+  "node_modules/html2canvas/dist/html2canvas.js": {
+    "file": "assets/html2canvas-DwiKiTRL.js",
+    "name": "html2canvas",
+    "src": "node_modules/html2canvas/dist/html2canvas.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_html2canvas-DAdnZG0D.js"
+    ]
+  },
+  "node_modules/xlsx/xlsx.mjs": {
+    "file": "assets/xlsx-HuRwxvho.js",
+    "name": "xlsx",
+    "src": "node_modules/xlsx/xlsx.mjs",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-xlsx-166tXQcn.js"
+    ]
+  },
+  "src/components/charts/DepartmentDoughnut.jsx": {
+    "file": "assets/DepartmentDoughnut-sWZJ1HoW.js",
+    "name": "DepartmentDoughnut",
+    "src": "src/components/charts/DepartmentDoughnut.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-recharts-C_11hlaH.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/components/charts/PayrollTrendChart.jsx": {
+    "file": "assets/PayrollTrendChart-DZKIGBPo.js",
+    "name": "PayrollTrendChart",
+    "src": "src/components/charts/PayrollTrendChart.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-recharts-C_11hlaH.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/components/invoices/CaSharePanel.jsx": {
+    "file": "assets/CaSharePanel-B4cj4Kre.js",
+    "name": "CaSharePanel",
+    "src": "src/components/invoices/CaSharePanel.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/components/payroll/CashfreePayDialog.jsx": {
+    "file": "assets/CashfreePayDialog-CRfKaTcw.js",
+    "name": "CashfreePayDialog",
+    "src": "src/components/payroll/CashfreePayDialog.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_CashfreePayDialog-BxK3IpMJ.js"
+    ]
+  },
+  "src/crm/BrandDetailPage.jsx": {
+    "file": "assets/BrandDetailPage-bX9t0exc.js",
+    "name": "BrandDetailPage",
+    "src": "src/crm/BrandDetailPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_useCrm-DhnIR8DO.js",
+      "_BrandsPage-DTHpjdbk.js",
+      "_crmReports-CJ0qHdCH.js",
+      "_crm-DPygeg8O.js",
+      "_AuthContext-9LkeGITp.js"
+    ]
+  },
+  "src/crm/BrandsPage.jsx": {
+    "file": "assets/BrandsPage-CPk7hkQ1.js",
+    "name": "BrandsPage",
+    "src": "src/crm/BrandsPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_BrandsPage-DTHpjdbk.js"
+    ]
+  },
+  "src/crm/CrmApp.jsx": {
+    "file": "assets/CrmApp-DRkRcb9X.js",
+    "name": "CrmApp",
+    "src": "src/crm/CrmApp.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_ThemeContext-P9qPrUNS.js",
+      "_useCrm-DhnIR8DO.js",
+      "_AuthContext-9LkeGITp.js",
+      "_BrandLogo-CTm8PmSd.js",
+      "_NotificationBell-BtZbakVe.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "src/crm/BrandsPage.jsx",
+      "src/crm/BrandDetailPage.jsx",
+      "src/crm/ImportBrandsPage.jsx",
+      "src/crm/DashboardPage.jsx"
+    ]
+  },
+  "src/crm/DashboardPage.jsx": {
+    "file": "assets/DashboardPage-DGhUnTeK.js",
+    "name": "DashboardPage",
+    "src": "src/crm/DashboardPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_vendor-recharts-C_11hlaH.js",
+      "_crm-DPygeg8O.js",
+      "_crmReports-CJ0qHdCH.js",
+      "_csv-BZCduWS5.js",
+      "_useCrm-DhnIR8DO.js",
+      "_AuthContext-9LkeGITp.js"
+    ]
+  },
+  "src/crm/ImportBrandsPage.jsx": {
+    "file": "assets/ImportBrandsPage-CQ8dOYqh.js",
+    "name": "ImportBrandsPage",
+    "src": "src/crm/ImportBrandsPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_vendor-csv-DSJEK5H6.js",
+      "_vendor-xlsx-166tXQcn.js",
+      "_useCrm-DhnIR8DO.js",
+      "_crm-DPygeg8O.js",
+      "_csv-BZCduWS5.js"
+    ]
+  },
+  "src/crm/TeamPage.jsx": {
+    "file": "assets/TeamPage-Dt06-BHr.js",
+    "name": "TeamPage",
+    "src": "src/crm/TeamPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_vendor-firebase-auth-eJTzyhS_.js",
+      "_firebase-CCH_qpyh.js",
+      "_useCrm-DhnIR8DO.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_crm-DPygeg8O.js"
+    ]
+  },
+  "src/crm/TemplatesPage.jsx": {
+    "file": "assets/TemplatesPage-CRoq5BvO.js",
+    "name": "TemplatesPage",
+    "src": "src/crm/TemplatesPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_useCrm-DhnIR8DO.js",
+      "_crm-DPygeg8O.js"
+    ]
+  },
+  "src/lib/firebase.js": {
+    "file": "assets/firebase-Dbaexqkd.js",
+    "name": "firebase",
+    "src": "src/lib/firebase.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_firebase-CCH_qpyh.js"
+    ]
+  },
+  "src/pages/AccessControlPage.jsx": {
+    "file": "assets/AccessControlPage-B_Hj5QMP.js",
+    "name": "AccessControlPage",
+    "src": "src/pages/AccessControlPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_TopBar-xdgFNlv7.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_AuthContext-9LkeGITp.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/pages/AddEmployeePage.jsx": {
+    "file": "assets/AddEmployeePage-BH2z0Iay.js",
+    "name": "AddEmployeePage",
+    "src": "src/pages/AddEmployeePage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_TopBar-xdgFNlv7.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_AuthContext-9LkeGITp.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_payrollEngine-TSvFUt8q.js"
+    ]
+  },
+  "src/pages/AgreementsPage.jsx": {
+    "file": "assets/AgreementsPage-D4do8W9U.js",
+    "name": "AgreementsPage",
+    "src": "src/pages/AgreementsPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_AgreementContext-54gK7PAg.js",
+      "_vendor-pdf-EFu4z4dB.js",
+      "_html2canvas-DAdnZG0D.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_InternContext-CFFehTzn.js",
+      "_AuthContext-9LkeGITp.js",
+      "_offerLetterPdf-BrXxt1Uc.js",
+      "_SignaturePad-BaCqUBEH.js"
+    ]
+  },
+  "src/pages/BulkImportPage.jsx": {
+    "file": "assets/BulkImportPage-DywOFCFG.js",
+    "name": "BulkImportPage",
+    "src": "src/pages/BulkImportPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_TopBar-xdgFNlv7.js",
+      "_csvHandler-Dy8nylWA.js",
+      "_excelHandler-ihE64E1O.js",
+      "_employeeRosterImport-NyPrlbQf.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_InternContext-CFFehTzn.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_AuthContext-9LkeGITp.js"
+    ]
+  },
+  "src/pages/CaSharePage.jsx": {
+    "file": "assets/CaSharePage-B3tEOMuO.js",
+    "name": "CaSharePage",
+    "src": "src/pages/CaSharePage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_InvoiceContext-uxYH4XxJ.js",
+      "_schemaMigration-B84oYala.js",
+      "_invoiceCompany-C5wTB5No.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "src/utils/excelHandler.js",
+      "src/utils/pdfGenerator.js",
+      "node_modules/fflate/esm/browser.js"
+    ]
+  },
+  "src/pages/CashfreeSyncPage.jsx": {
+    "file": "assets/CashfreeSyncPage-UkA2SJfJ.js",
+    "name": "CashfreeSyncPage",
+    "src": "src/pages/CashfreeSyncPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_firebase-CCH_qpyh.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_AuthContext-9LkeGITp.js",
+      "_InternContext-CFFehTzn.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_ExpenseContext-Dy5hjyyg.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_TopBar-xdgFNlv7.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/pages/ClientInvoiceView.jsx": {
+    "file": "assets/ClientInvoiceView-B9CPxRdI.js",
+    "name": "ClientInvoiceView",
+    "src": "src/pages/ClientInvoiceView.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_InvoiceContext-uxYH4XxJ.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_BrandLogo-CTm8PmSd.js",
+      "_pdfGenerator-Bb8wTNYa.js",
+      "_invoiceCompany-C5wTB5No.js",
+      "_firebase-CCH_qpyh.js",
+      "_vendor-firebase-core-LaqpiFFz.js",
+      "_schemaMigration-B84oYala.js"
+    ]
+  },
+  "src/pages/ClientsPage.jsx": {
+    "file": "assets/ClientsPage-CooAkekn.js",
+    "name": "ClientsPage",
+    "src": "src/pages/ClientsPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_InvoiceContext-uxYH4XxJ.js",
+      "_gstinDecoder-Cyusk6si.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_TopBar-xdgFNlv7.js",
+      "_invoiceEngine-haVLI9UD.js",
+      "_preload-helper-BQUUbbNx.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ],
+    "dynamicImports": [
+      "node_modules/exceljs/dist/exceljs.min.js"
+    ]
+  },
+  "src/pages/CreateInvoicePage.jsx": {
+    "file": "assets/CreateInvoicePage-qTFZjeDq.js",
+    "name": "CreateInvoicePage",
+    "src": "src/pages/CreateInvoicePage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_TopBar-xdgFNlv7.js",
+      "_InvoiceContext-uxYH4XxJ.js",
+      "_gstinDecoder-Cyusk6si.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_BrandLogo-CTm8PmSd.js",
+      "_pdfGenerator-Bb8wTNYa.js"
+    ]
+  },
+  "src/pages/DashboardPage.jsx": {
+    "file": "assets/DashboardPage-B523iSZi.js",
+    "name": "DashboardPage",
+    "src": "src/pages/DashboardPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_TopBar-xdgFNlv7.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_firebase-CCH_qpyh.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_AuthContext-9LkeGITp.js",
+      "_InvoiceContext-uxYH4XxJ.js",
+      "_InternContext-CFFehTzn.js",
+      "_useOfficeExpenses-oJs76qgZ.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "src/components/charts/PayrollTrendChart.jsx",
+      "src/components/charts/DepartmentDoughnut.jsx"
+    ]
+  },
+  "src/pages/EmailVaultPage.jsx": {
+    "file": "assets/EmailVaultPage-CNzprRg6.js",
+    "name": "EmailVaultPage",
+    "src": "src/pages/EmailVaultPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_TopBar-xdgFNlv7.js",
+      "_AuthContext-9LkeGITp.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_firebase-CCH_qpyh.js",
+      "_vendor-firebase-firestore-beRYNGZx.js"
+    ]
+  },
+  "src/pages/EmployeeDirectoryPage.jsx": {
+    "file": "assets/EmployeeDirectoryPage-DMVRBgSD.js",
+    "name": "EmployeeDirectoryPage",
+    "src": "src/pages/EmployeeDirectoryPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_TopBar-xdgFNlv7.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_AuthContext-9LkeGITp.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_csvHandler-Dy8nylWA.js",
+      "_excelHandler-ihE64E1O.js"
+    ]
+  },
+  "src/pages/EmployeeOnboardingPage.jsx": {
+    "file": "assets/EmployeeOnboardingPage-Bf7GZBT-.js",
+    "name": "EmployeeOnboardingPage",
+    "src": "src/pages/EmployeeOnboardingPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_vendor-firebase-core-LaqpiFFz.js",
+      "_firebase-CCH_qpyh.js",
+      "_logoBase64-KdYVw8QG.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/pages/EmployeeProfilePage.jsx": {
+    "file": "assets/EmployeeProfilePage-C0U_ynf5.js",
+    "name": "EmployeeProfilePage",
+    "src": "src/pages/EmployeeProfilePage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_TopBar-xdgFNlv7.js",
+      "_EmailPreviewModal-C4wzCGbR.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_AuthContext-9LkeGITp.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_pdfGenerator-Bb8wTNYa.js",
+      "_csvHandler-Dy8nylWA.js"
+    ]
+  },
+  "src/pages/ExitManagementPage.jsx": {
+    "file": "assets/ExitManagementPage-BZI8WFdk.js",
+    "name": "ExitManagementPage",
+    "src": "src/pages/ExitManagementPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_TopBar-xdgFNlv7.js",
+      "_EmailPreviewModal-C4wzCGbR.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_AuthContext-9LkeGITp.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_pdfGenerator-Bb8wTNYa.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/pages/ExpenseAdminPage.jsx": {
+    "file": "assets/ExpenseAdminPage-BOP4mjec.js",
+    "name": "ExpenseAdminPage",
+    "src": "src/pages/ExpenseAdminPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_ExpenseContext-Dy5hjyyg.js",
+      "_AuthContext-9LkeGITp.js",
+      "_TopBar-xdgFNlv7.js",
+      "_vendor-xlsx-166tXQcn.js",
+      "_vendor-csv-DSJEK5H6.js",
+      "_TdsContext-OcLqvcEH.js",
+      "_tdsUtils-COyrv4IY.js",
+      "_tdsCore-BA5ZmP9y.js",
+      "_expensePayout-BSEN4wp2.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/pages/ExpenseFormPage.jsx": {
+    "file": "assets/ExpenseFormPage-Ce-IhNVG.js",
+    "name": "ExpenseFormPage",
+    "src": "src/pages/ExpenseFormPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_ExpenseContext-Dy5hjyyg.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_BrandLogo-CTm8PmSd.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/pages/ExpenseTrackingPage.jsx": {
+    "file": "assets/ExpenseTrackingPage-CwQKh-Hm.js",
+    "name": "ExpenseTrackingPage",
+    "src": "src/pages/ExpenseTrackingPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_BrandLogo-CTm8PmSd.js",
+      "_expensePayout-BSEN4wp2.js"
+    ]
+  },
+  "src/pages/ForgotPasswordPage.jsx": {
+    "file": "assets/ForgotPasswordPage-BdQiLafp.js",
+    "name": "ForgotPasswordPage",
+    "src": "src/pages/ForgotPasswordPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/pages/InternsPage.jsx": {
+    "file": "assets/InternsPage-DtuOYs4C.js",
+    "name": "InternsPage",
+    "src": "src/pages/InternsPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_CashfreePayCell-Bw4U0T1H.js",
+      "_cashfreePayout-BamdxUjx.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_EmailPreviewModal-C4wzCGbR.js",
+      "_TopBar-xdgFNlv7.js",
+      "_InternContext-CFFehTzn.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_TdsContext-OcLqvcEH.js",
+      "_AuthContext-9LkeGITp.js",
+      "_tdsUtils-COyrv4IY.js",
+      "_TdsTransactionModal-C6e9i6GC.js",
+      "_pdfGenerator-Bb8wTNYa.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "src/components/payroll/CashfreePayDialog.jsx"
+    ]
+  },
+  "src/pages/InvoicesPage.jsx": {
+    "file": "assets/InvoicesPage-WYcnmd1k.js",
+    "name": "InvoicesPage",
+    "src": "src/pages/InvoicesPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_vendor-recharts-C_11hlaH.js",
+      "_TopBar-xdgFNlv7.js",
+      "_InvoiceContext-uxYH4XxJ.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_AuthContext-9LkeGITp.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "src/components/invoices/CaSharePanel.jsx",
+      "src/utils/excelHandler.js"
+    ]
+  },
+  "src/pages/LoginPage.jsx": {
+    "file": "assets/LoginPage-CbMnllzZ.js",
+    "name": "LoginPage",
+    "src": "src/pages/LoginPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_AuthContext-9LkeGITp.js",
+      "_BrandLogo-CTm8PmSd.js"
+    ]
+  },
+  "src/pages/OfficeExpensesPage.jsx": {
+    "file": "assets/OfficeExpensesPage-8Emb0SLE.js",
+    "name": "OfficeExpensesPage",
+    "src": "src/pages/OfficeExpensesPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_TopBar-xdgFNlv7.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_useOfficeExpenses-oJs76qgZ.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "node_modules/xlsx/xlsx.mjs"
+    ]
+  },
+  "src/pages/OnboardingRequestsPage.jsx": {
+    "file": "assets/OnboardingRequestsPage-OYvy6Jvr.js",
+    "name": "OnboardingRequestsPage",
+    "src": "src/pages/OnboardingRequestsPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_EmailPreviewModal-C4wzCGbR.js",
+      "_TopBar-xdgFNlv7.js",
+      "_OnboardingContext-f0eKpcKM.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_offerLetterPdf-BrXxt1Uc.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_AuthContext-9LkeGITp.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/pages/PanStatusPage.jsx": {
+    "file": "assets/PanStatusPage-DGHBKFFR.js",
+    "name": "PanStatusPage",
+    "src": "src/pages/PanStatusPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_tdsCore-BA5ZmP9y.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/pages/PanSubmissionPage.jsx": {
+    "file": "assets/PanSubmissionPage-BX_DeWaX.js",
+    "name": "PanSubmissionPage",
+    "src": "src/pages/PanSubmissionPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_vendor-firebase-core-LaqpiFFz.js",
+      "_firebase-CCH_qpyh.js",
+      "_tdsCore-BA5ZmP9y.js",
+      "_publicToken-Ziuzse4S.js",
+      "_vendor-react-C1Dy7Cd7.js"
+    ]
+  },
+  "src/pages/PaymentsPage.jsx": {
+    "file": "assets/PaymentsPage-CfSyDFuN.js",
+    "name": "PaymentsPage",
+    "src": "src/pages/PaymentsPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_TopBar-xdgFNlv7.js",
+      "_CashfreePayDialog-BxK3IpMJ.js",
+      "_CashfreePayCell-Bw4U0T1H.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_cashfreePayout-BamdxUjx.js",
+      "_AuthContext-9LkeGITp.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_InternContext-CFFehTzn.js",
+      "_ExpenseContext-Dy5hjyyg.js",
+      "_expensePayout-BSEN4wp2.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "node_modules/exceljs/dist/exceljs.min.js"
+    ]
+  },
+  "src/pages/PayrollPage.jsx": {
+    "file": "assets/PayrollPage-C7VKYQ3-.js",
+    "name": "PayrollPage",
+    "src": "src/pages/PayrollPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_TopBar-xdgFNlv7.js",
+      "_EmailPreviewModal-C4wzCGbR.js",
+      "_EmployeeContext-q64Qq2Mf.js",
+      "_AuthContext-9LkeGITp.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_payrollEngine-TSvFUt8q.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_csvHandler-Dy8nylWA.js",
+      "_CashfreePayCell-Bw4U0T1H.js",
+      "_cashfreePayout-BamdxUjx.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "src/utils/pdfGenerator.js",
+      "src/components/payroll/CashfreePayDialog.jsx"
+    ]
+  },
+  "src/pages/ProfilePage.jsx": {
+    "file": "assets/ProfilePage-dBVNExzR.js",
+    "name": "ProfilePage",
+    "src": "src/pages/ProfilePage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_AuthContext-9LkeGITp.js",
+      "_ToastContext-DC1fIFG6.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_TopBar-xdgFNlv7.js",
+      "_vendor-firebase-firestore-beRYNGZx.js",
+      "_firebase-CCH_qpyh.js",
+      "_invoiceEngine-haVLI9UD.js",
+      "_InvoiceContext-uxYH4XxJ.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "src/lib/firebase.js",
+      "node_modules/firebase/firestore/dist/esm/index.esm.js",
+      "src/utils/emailSender.js"
+    ]
+  },
+  "src/pages/PublicSignPage.jsx": {
+    "file": "assets/PublicSignPage-0qIqIA7T.js",
+    "name": "PublicSignPage",
+    "src": "src/pages/PublicSignPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_AgreementContext-54gK7PAg.js",
+      "_SignaturePad-BaCqUBEH.js"
+    ]
+  },
+  "src/pages/TdsPage.jsx": {
+    "file": "assets/TdsPage-C9MQaNZ_.js",
+    "name": "TdsPage",
+    "src": "src/pages/TdsPage.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-COiEfhsA.js",
+      "_vendor-icons-hnNHp7Ix.js",
+      "_vendor-recharts-C_11hlaH.js",
+      "_TopBar-xdgFNlv7.js",
+      "_TdsContext-OcLqvcEH.js",
+      "_InvoiceContext-uxYH4XxJ.js",
+      "_AuthContext-9LkeGITp.js",
+      "_tdsUtils-COyrv4IY.js",
+      "_tdsCore-BA5ZmP9y.js",
+      "_TdsTransactionModal-C6e9i6GC.js",
+      "_vendor-react-C1Dy7Cd7.js",
+      "_preload-helper-BQUUbbNx.js"
+    ],
+    "dynamicImports": [
+      "src/utils/tdsUtils.js"
+    ]
+  },
+  "src/utils/emailSender.js": {
+    "file": "assets/emailSender-BW5Xwhb1.js",
+    "name": "emailSender",
+    "src": "src/utils/emailSender.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_emailSender-BQSW4O6w.js"
+    ]
+  },
+  "src/utils/employeeRosterImport.js": {
+    "file": "assets/employeeRosterImport-DOilRXCV.js",
+    "name": "employeeRosterImport",
+    "src": "src/utils/employeeRosterImport.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_employeeRosterImport-NyPrlbQf.js"
+    ]
+  },
+  "src/utils/excelHandler.js": {
+    "file": "assets/excelHandler-Djr9pW3d.js",
+    "name": "excelHandler",
+    "src": "src/utils/excelHandler.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_invoiceEngine-haVLI9UD.js",
+      "_excelHandler-ihE64E1O.js"
+    ]
+  },
+  "src/utils/pdfGenerator.js": {
+    "file": "assets/pdfGenerator-ZdgUm6T-.js",
+    "name": "pdfGenerator",
+    "src": "src/utils/pdfGenerator.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_pdfGenerator-Bb8wTNYa.js"
+    ]
+  },
+  "src/utils/tdsUtils.js": {
+    "file": "assets/tdsUtils-nnCTy7zx.js",
+    "name": "tdsUtils",
+    "src": "src/utils/tdsUtils.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_tdsCore-BA5ZmP9y.js",
+      "_tdsUtils-COyrv4IY.js"
+    ]
+  }
+}

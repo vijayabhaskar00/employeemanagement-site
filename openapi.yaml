@@ -1,0 +1,898 @@
+openapi: 3.1.0
+info:
+  title: Employee Hub Developer API
+  version: 1.0.0
+  description: >
+    Read / create / update access to Employee Hub business data for integration
+    partners. No delete. Server-to-server only (no CORS). See functions/API.md.
+servers:
+  - url: https://stpayrollinvoices.web.app/api/v1
+    description: Production (via Firebase Hosting rewrite)
+
+security:
+  - bearerAuth: []
+  - apiKeyAuth: []
+
+tags:
+  - name: employees
+  - name: interns
+  - name: payroll
+  - name: intern_payroll
+  - name: invoices
+  - name: expenses
+  - name: office_spaces
+  - name: office_bills
+  - name: crm
+
+paths:
+  /:
+    get:
+      summary: Health check (unauthenticated)
+      security: []
+      responses:
+        '200':
+          description: Service is up.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status, version, requestId]
+                properties:
+                  status: { type: string, enum: [ok] }
+                  version: { type: string }
+                  requestId: { type: string }
+
+  /employees:
+    get:
+      tags: [employees]
+      summary: List employees
+      security: [{ bearerAuth: [] }, { apiKeyAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: department, in: query, schema: { type: string } }
+        - { name: status, in: query, schema: { type: string } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+    post:
+      tags: [employees]
+      summary: Create an employee
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/EmployeeWrite' }
+      responses:
+        '201': { $ref: '#/components/responses/Item' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /employees/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [employees]
+      summary: Get an employee
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+    patch:
+      tags: [employees]
+      summary: Update an employee (a salary change cascades to payroll rows)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/EmployeeWrite' }
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+
+  /interns:
+    get:
+      tags: [interns]
+      summary: List interns
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: department, in: query, schema: { type: string } }
+        - { name: status, in: query, schema: { type: string } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+    post:
+      tags: [interns]
+      summary: Create an intern
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/InternWrite' } } }
+      responses:
+        '201': { $ref: '#/components/responses/Item' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /interns/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [interns]
+      summary: Get an intern
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+    patch:
+      tags: [interns]
+      summary: Update an intern
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/InternWrite' } } }
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+
+  /payroll:
+    get:
+      tags: [payroll]
+      summary: List payroll records
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: employeeId, in: query, schema: { type: string } }
+        - { name: month, in: query, schema: { type: string } }
+        - { name: year, in: query, schema: { type: integer } }
+        - { name: paymentStatus, in: query, schema: { type: string } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+    post:
+      tags: [payroll]
+      summary: Create a payroll record (totals are computed server-side)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/PayrollWrite' } } }
+      responses:
+        '201': { $ref: '#/components/responses/Item' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /payroll/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [payroll]
+      summary: Get a payroll record (id is {employeeId}_{month}_{year})
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+    patch:
+      tags: [payroll]
+      summary: Update a payroll record (payment fields are read-only)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/PayrollWrite' } } }
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+
+  /intern_payroll:
+    get:
+      tags: [intern_payroll]
+      summary: List intern payroll records
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: internId, in: query, schema: { type: string } }
+        - { name: month, in: query, schema: { type: string } }
+        - { name: year, in: query, schema: { type: integer } }
+        - { name: paymentStatus, in: query, schema: { type: string } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+    post:
+      tags: [intern_payroll]
+      summary: Create an intern payroll record
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/InternPayrollWrite' } } }
+      responses:
+        '201': { $ref: '#/components/responses/Item' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /intern_payroll/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [intern_payroll]
+      summary: Get an intern payroll record
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+    patch:
+      tags: [intern_payroll]
+      summary: Update an intern payroll record
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/InternPayrollWrite' } } }
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+
+  /invoices:
+    get:
+      tags: [invoices]
+      summary: List invoices
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: status, in: query, schema: { type: string } }
+        - { name: documentType, in: query, schema: { type: string } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+    post:
+      tags: [invoices]
+      summary: Create an invoice (number + all money fields computed server-side)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/InvoiceWrite' } } }
+      responses:
+        '201': { $ref: '#/components/responses/Item' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /invoices/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [invoices]
+      summary: Get an invoice
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+
+  /expenses:
+    get:
+      tags: [expenses]
+      summary: List expenses
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: status, in: query, schema: { type: string } }
+        - { name: email, in: query, schema: { type: string } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+    post:
+      tags: [expenses]
+      summary: Create an expense claim
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/ExpenseWrite' } } }
+      responses:
+        '201': { $ref: '#/components/responses/Item' }
+        '422': { $ref: '#/components/responses/Error' }
+  /expenses/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [expenses]
+      summary: Get an expense claim
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+    patch:
+      tags: [expenses]
+      summary: Update an expense claim (payment/approval fields are read-only)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/ExpenseWrite' } } }
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+
+  /office_spaces:
+    get:
+      tags: [office_spaces]
+      summary: List offices
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+    post:
+      tags: [office_spaces]
+      summary: Create an office (the id is built from the name)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/OfficeWrite' } } }
+      responses:
+        '201': { $ref: '#/components/responses/Item' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /office_spaces/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [office_spaces]
+      summary: Get an office
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+    patch:
+      tags: [office_spaces]
+      summary: Update an office (payeeAccounts is read-only)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/OfficeWrite' } } }
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+
+  /office_bills:
+    get:
+      tags: [office_bills]
+      summary: List rent and utility bills
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: officeId, in: query, schema: { type: string } }
+        - { name: type, in: query, schema: { type: string } }
+        - { name: year, in: query, schema: { type: integer } }
+        - { name: month, in: query, schema: { type: integer } }
+        - { name: status, in: query, schema: { type: string, enum: [Pending, Paid] } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+    post:
+      tags: [office_bills]
+      summary: Create a bill (always Pending; one per office, type and month)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/OfficeBillCreate' } } }
+      responses:
+        '201': { $ref: '#/components/responses/Item' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /office_bills/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [office_bills]
+      summary: Get a bill
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+    patch:
+      tags: [office_bills]
+      summary: Update a Pending bill (a Paid bill returns 409)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/OfficeBillUpdate' } } }
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+
+  /me:
+    get:
+      summary: What this key can read and write
+      description: Returns the key's label, scopes and the resources it may read and write. crm:read covers every crm_* resource, including ones added later.
+      responses:
+        '200':
+          description: The key's access
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  label: { type: string }
+                  scopes: { type: array, items: { type: string } }
+                  read: { type: array, items: { type: string } }
+                  write: { type: array, items: { type: string } }
+        '401': { $ref: '#/components/responses/Error' }
+  /crm_brands:
+    get:
+      tags: [crm]
+      summary: List CRM brands
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: ownerUid, in: query, schema: { type: string } }
+        - { name: stage, in: query, schema: { type: string, enum: [Prospect, Emailed, Discussion, 'No response'] } }
+        - { name: source, in: query, schema: { type: string } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+    post:
+      tags: [crm]
+      summary: Push in a lead (lands Unassigned; an existing brand returns 409)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/CrmBrandCreate' } } }
+      responses:
+        '201': { $ref: '#/components/responses/Item' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /crm_brands/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [crm]
+      summary: Get a CRM brand
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+    patch:
+      tags: [crm]
+      summary: Update a CRM brand (never its owner)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/CrmBrandWrite' } } }
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /crm_deals:
+    get:
+      tags: [crm]
+      summary: List deals (read-only)
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: brandId, in: query, schema: { type: string } }
+        - { name: ownerUid, in: query, schema: { type: string } }
+        - { name: creditedUid, in: query, schema: { type: string } }
+        - { name: stage, in: query, schema: { type: string, enum: [Quoted, 'Invoice requested', Won, 'Work assigned', 'In progress', Completed, Lost] } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+  /crm_deals/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [crm]
+      summary: Get a deal
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+  /crm_activities:
+    get:
+      tags: [crm]
+      summary: List timeline entries (read-only)
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: brandId, in: query, schema: { type: string } }
+        - { name: dealId, in: query, schema: { type: string } }
+        - { name: ownerUid, in: query, schema: { type: string } }
+        - { name: type, in: query, schema: { type: string } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+  /crm_activities/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [crm]
+      summary: Get a timeline entry
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+  /crm_targets:
+    get:
+      tags: [crm]
+      summary: List monthly targets (read-only)
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: uid, in: query, schema: { type: string } }
+        - { name: month, in: query, schema: { type: string, example: '2026-11' } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+  /crm_targets/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [crm]
+      summary: Get a target ({uid}_{YYYY-MM})
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+  /crm_tasks:
+    get:
+      tags: [crm]
+      summary: List follow-up tasks (read-only)
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: brandId, in: query, schema: { type: string } }
+        - { name: ownerUid, in: query, schema: { type: string } }
+        - { name: done, in: query, schema: { type: string, enum: ['true', 'false'] } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+        '422': { $ref: '#/components/responses/Error' }
+  /crm_tasks/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [crm]
+      summary: Get a task
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+  /crm_scheduled_mail:
+    get:
+      tags: [crm]
+      summary: List emails queued with Send later (read-only)
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+        - { name: brandId, in: query, schema: { type: string } }
+        - { name: ownerUid, in: query, schema: { type: string } }
+        - { name: status, in: query, schema: { type: string, enum: [scheduled, sending, sent, cancelled, skipped, failed] } }
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+  /crm_scheduled_mail/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [crm]
+      summary: Get a scheduled email
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+  /crm_templates:
+    get:
+      tags: [crm]
+      summary: List email templates (read-only)
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+  /crm_templates/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [crm]
+      summary: Get an email template
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+  /crm_services:
+    get:
+      tags: [crm]
+      summary: List services used on quotes (read-only)
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+  /crm_services/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [crm]
+      summary: Get a service
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+  /crm_teams:
+    get:
+      tags: [crm]
+      summary: List delivery teams (read-only)
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/cursor'
+      responses:
+        '200': { $ref: '#/components/responses/List' }
+  /crm_teams/{id}:
+    parameters: [{ $ref: '#/components/parameters/id' }]
+    get:
+      tags: [crm]
+      summary: Get a delivery team
+      responses:
+        '200': { $ref: '#/components/responses/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Authorization: Bearer emh_live_...'
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      schema: { type: string }
+    limit:
+      name: limit
+      in: query
+      schema: { type: integer, minimum: 1, maximum: 100, default: 50 }
+    cursor:
+      name: cursor
+      in: query
+      description: The previous response's nextCursor.
+      schema: { type: string }
+
+  responses:
+    List:
+      description: A page of records.
+      headers:
+        X-Request-Id: { schema: { type: string } }
+      content:
+        application/json:
+          schema:
+            type: object
+            required: [data, nextCursor, requestId]
+            properties:
+              data: { type: array, items: { type: object, additionalProperties: true } }
+              nextCursor: { type: [string, 'null'] }
+              requestId: { type: string }
+    Item:
+      description: A single record.
+      headers:
+        X-Request-Id: { schema: { type: string } }
+      content:
+        application/json:
+          schema:
+            type: object
+            required: [data, requestId]
+            properties:
+              data: { type: object, additionalProperties: true }
+              requestId: { type: string }
+    Error:
+      description: Error envelope.
+      headers:
+        X-Request-Id: { schema: { type: string } }
+        Retry-After: { schema: { type: integer }, description: Present on 429. }
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+  schemas:
+    Error:
+      type: object
+      required: [error, requestId]
+      properties:
+        requestId: { type: string }
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code:
+              type: string
+              enum: [bad_request, unauthorized, forbidden, not_found, method_not_allowed, conflict, validation_error, rate_limited, internal]
+            message: { type: string }
+            details:
+              type: array
+              items:
+                type: object
+                properties:
+                  field: { type: string }
+                  message: { type: string }
+
+    SalaryComponents:
+      type: object
+      additionalProperties: false
+      properties:
+        basic: { type: number }
+        hra: { type: number }
+        ca: { type: number }
+        sa: { type: number }
+        overtime: { type: number }
+        arrears: { type: number }
+        incentive: { type: number }
+        conveyance: { type: number }
+        referral: { type: number }
+        professionalTax: { type: number }
+        epf: { type: number }
+        tds: { type: number }
+        esi: { type: number }
+        otherDeductions: { type: number }
+
+    EmployeeWrite:
+      type: object
+      additionalProperties: false
+      required: [id]
+      properties:
+        id: { type: string }
+        firstName: { type: string }
+        lastName: { type: string }
+        fullName: { type: string }
+        email: { type: string }
+        phone: { type: string }
+        department: { type: string }
+        designation: { type: string }
+        status: { type: string }
+        avatarColor: { type: string }
+        joinDate: { type: string }
+        location: { type: string }
+        leaveBalance: { type: number }
+        salary: { $ref: '#/components/schemas/SalaryComponents' }
+        bank:
+          type: object
+          properties:
+            accountNumber: { type: string }
+            ifscCode: { type: string }
+            bankName: { type: string }
+            branch: { type: string }
+            accountType: { type: string }
+
+    InternWrite:
+      type: object
+      additionalProperties: false
+      required: [id]
+      properties:
+        id: { type: string }
+        firstName: { type: string }
+        lastName: { type: string }
+        fullName: { type: string }
+        email: { type: string }
+        phone: { type: string }
+        department: { type: string }
+        college: { type: string }
+        stipend: { type: number }
+        status: { type: string }
+        startDate: { type: string }
+        endDate: { type: string }
+        avatarColor: { type: string }
+        accountNumber: { type: string }
+        ifscCode: { type: string }
+        bankName: { type: string }
+
+    PayrollWrite:
+      type: object
+      additionalProperties: false
+      required: [employeeId, month, year]
+      description: >
+        Totals (grossSalary, netSalary, totalDeductions, daysWorked, balanceAmount, ...)
+        and payment fields (paymentStatus, paidAmount, partialPayments, cashfree*) are
+        computed/owned server-side and rejected if sent.
+      properties:
+        employeeId: { type: string }
+        employeeName: { type: string }
+        department: { type: string }
+        month: { type: string }
+        year: { type: integer }
+        totalDays: { type: number }
+        leavesTaken: { type: number }
+        lopDays: { type: number }
+        overtimeHours: { type: number }
+        annualCTC: { type: number }
+        basic: { type: number }
+        hra: { type: number }
+        ca: { type: number }
+        sa: { type: number }
+        overtime: { type: number }
+        arrears: { type: number }
+        incentive: { type: number }
+        conveyance: { type: number }
+        referral: { type: number }
+        professionalTax: { type: number }
+        epf: { type: number }
+        tds: { type: number }
+        esi: { type: number }
+        otherDeductions: { type: number }
+
+    InternPayrollWrite:
+      type: object
+      additionalProperties: false
+      required: [internId, month, year]
+      properties:
+        internId: { type: string }
+        internName: { type: string }
+        department: { type: string }
+        month: { type: string }
+        year: { type: integer }
+        totalDays: { type: number }
+        leavesTaken: { type: number }
+        lopDays: { type: number }
+        stipend: { type: number }
+        deductions: { type: number }
+
+    InvoiceItem:
+      type: object
+      required: [qty, rate, gstRate]
+      properties:
+        description: { type: string }
+        hsn: { type: string }
+        qty: { type: number }
+        unit: { type: string }
+        rate: { type: number }
+        gstRate: { type: number }
+
+    InvoiceWrite:
+      type: object
+      additionalProperties: false
+      required: [items]
+      description: >
+        invoiceNumber, id, and every money field (subtotal, cgst, sgst, igst, cess,
+        taxAmount, total, outstandingAmount), plus status/isSent/receipts/auditLog,
+        are computed server-side and rejected if sent.
+      properties:
+        documentType:
+          type: string
+          enum: [Tax Invoice, Proforma Invoice, Quotation, Export Invoice]
+        date: { type: string }
+        dueDate: { type: string }
+        currency: { type: string }
+        client: { type: object, additionalProperties: true }
+        clientId: { type: string }
+        items: { type: array, minItems: 1, items: { $ref: '#/components/schemas/InvoiceItem' } }
+        placeOfSupply: { type: string }
+        discount: { type: number }
+        discountType: { type: string, enum: [flat, percent] }
+        notes: { type: string }
+        terms: { type: string }
+        poNumber: { type: string }
+        reverseCharge: { type: boolean }
+        isExport: { type: boolean }
+        exportType: { type: string, enum: [Zero Rated, With Tax] }
+
+    ExpenseWrite:
+      type: object
+      additionalProperties: false
+      required: [fullName, amount, purpose]
+      description: >
+        payments, approvedAmount, netPayable, tdsApplied, auditTrail and cashfree*
+        are read-only via the API. status on create must be Pending Admin or
+        Pending HR Review.
+      properties:
+        fullName: { type: string }
+        email: { type: string }
+        submittedBy: { type: string }
+        contactNumber: { type: string }
+        employeeId: { type: string }
+        department: { type: string }
+        purpose: { type: string }
+        category: { type: string }
+        amount: { type: number }
+        expenseDate: { type: string }
+        notes: { type: string }
+        status: { type: string, enum: [Pending Admin, Pending HR Review] }
+        attachments: { type: array, items: { type: object, additionalProperties: true } }
+    OfficeWrite:
+      type: object
+      properties:
+        name: { type: string, description: Required on create }
+        address: { type: string }
+        landlordName: { type: string }
+        landlordPhone: { type: string }
+        landlordPan: { type: string }
+        monthlyRent: { type: number, minimum: 0 }
+        rentDueDay: { type: integer, minimum: 1, maximum: 28, default: 5 }
+        securityDeposit: { type: number, minimum: 0 }
+        agreementStart: { type: string, format: date }
+        agreementEnd: { type: string, format: date }
+        electricityProvider: { type: string }
+        consumerNumber: { type: string }
+        trackedTypes: { type: array, items: { type: string, enum: [Rent, Electricity, Maintenance, Water, Internet, Other] } }
+        active: { type: boolean, default: true }
+        notes: { type: string }
+    OfficeBillUpdate:
+      type: object
+      properties:
+        amount: { type: number, exclusiveMinimum: 0 }
+        tdsAmount: { type: number, minimum: 0 }
+        dueDate: { type: string, format: date }
+        billNumber: { type: string }
+        units: { type: number }
+        notes: { type: string }
+    OfficeBillCreate:
+      allOf:
+        - $ref: '#/components/schemas/OfficeBillUpdate'
+        - type: object
+          required: [officeId, type, year, month, amount]
+          properties:
+            officeId: { type: string }
+            type: { type: string, enum: [Rent, Electricity, Maintenance, Water, Internet, Other] }
+            year: { type: integer, minimum: 2000 }
+            month: { type: integer, minimum: 1, maximum: 12 }
+    CrmContact:
+      type: object
+      properties:
+        name: { type: string }
+        title: { type: string }
+        email: { type: string, format: email }
+        phone: { type: string }
+        linkedin: { type: string }
+    CrmBrandWrite:
+      type: object
+      properties:
+        company: { type: string }
+        source: { type: string, enum: [Apollo, LinkedIn, Event, Referral, Direct, Inbound, Other] }
+        stage: { type: string, enum: [Prospect, Emailed, Discussion, 'No response'] }
+        contacts: { type: array, maxItems: 50, items: { $ref: '#/components/schemas/CrmContact' } }
+        website: { type: string }
+        industry: { type: string }
+    CrmBrandCreate:
+      allOf:
+        - $ref: '#/components/schemas/CrmBrandWrite'
+        - type: object
+          required: [company, source]

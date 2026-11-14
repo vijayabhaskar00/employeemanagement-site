@@ -1,0 +1,1 @@
+export{o as default,t as generateInternCertificate,n as generateInvoicePDF,r as generatePayslip,i as generateRelievingLetter,a as generateStipendSlip}from"./pdfGenerator-Bb8wTNYa.js";

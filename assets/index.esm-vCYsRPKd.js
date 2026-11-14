@@ -1,0 +1,1 @@
+export{rt as collection,m as deleteDoc,ot as doc,y as getDoc,b as getDocs,E as orderBy,D as query,k as setDoc,P as writeBatch}from"./vendor-firebase-firestore-beRYNGZx.js";

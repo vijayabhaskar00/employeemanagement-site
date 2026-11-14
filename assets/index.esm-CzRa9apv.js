@@ -1,0 +1,1 @@
+export{t as getMessaging,n as getToken,r as isSupported}from"./vendor-firebase-messaging--Yxy3FMZ.js";
