@@ -1,0 +1,1 @@
+function e(e,t=16){if(!Number.isInteger(t)||t<1)throw Error(`generatePublicToken: length must be a positive integer`);let n=new Uint8Array(t);crypto.getRandomValues(n);let r=Array.from(n,e=>`ABCDEFGHJKLMNPQRSTUVWXYZ23456789`[e%32]).join(``);return e?`${e}-${r}`:r}export{e as t};

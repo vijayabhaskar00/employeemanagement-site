@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="112" fill="#ffffff" />
+  <g fill="#d9232d">
+    <!-- Exquisite high-fidelity geometric construction of Student Tribe 's' -->
+    <path d="M225 190 C225 110, 85 110, 85 190 C85 240, 225 245, 225 310 C225 390, 85 390, 85 310 L135 290 C135 340, 175 340, 175 310 C175 275, 135 270, 135 230 C135 150, 175 150, 175 190 Z" />
+    <!-- Prominent tall stem construction of Student Tribe 't' -->
+    <path d="M260 60 L310 60 L310 160 L370 160 L370 205 L310 205 L310 320 C310 360, 350 360, 370 330 L370 380 C310 410, 260 390, 260 320 L260 205 L215 205 L215 160 L260 160 Z" />
+    <!-- Iconic solid red circle dot -->
+    <circle cx="435" cy="355" r="50" />
+  </g>
+</svg>
