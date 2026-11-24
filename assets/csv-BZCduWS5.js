@@ -1,0 +1,1 @@
+import{i as e}from"./rolldown-runtime-COiEfhsA.js";import{t}from"./vendor-csv-DSJEK5H6.js";var n=e(t(),1);function r(e,t){let r=URL.createObjectURL(new Blob([n.default.unparse(t)],{type:`text/csv`}));Object.assign(document.createElement(`a`),{href:r,download:e}).click(),URL.revokeObjectURL(r)}export{r as t};

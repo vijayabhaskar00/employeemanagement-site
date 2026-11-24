@@ -1,0 +1,12 @@
+{
+  "name": "Student Tribe Brands CRM",
+  "short_name": "Brands CRM",
+  "start_url": "./#/crm",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#6366f1",
+  "icons": [
+    { "src": "logo.jpg", "sizes": "1024x1024", "type": "image/jpeg", "purpose": "any" }
+  ]
+}
